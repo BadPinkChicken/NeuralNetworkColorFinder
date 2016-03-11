@@ -12,6 +12,7 @@ sf::RectangleShape	draw_line(sf::Vector2f pos1, sf::Vector2f pos2, int t)
   int dist = sqrt(Distance(pos1.x, pos2.x) + Distance(pos2.y, pos2.y)) + abs(pente)*2.5;
   tmp.setSize(sf::Vector2f(dist, t));
   tmp.setPosition(sf::Vector2f(pos1.x+ 40, pos1.y + 40));
+  tmp.setFillColor(sf::Color(13*t, 13*t, 13*t));
   tmp.rotate(pente);
   return (tmp);
 }
