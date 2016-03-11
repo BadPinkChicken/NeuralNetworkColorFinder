@@ -1,6 +1,10 @@
 # NeuralNetworColorFinder
 This program is 100% inspired by this video https://www.youtube.com/watch?v=7mNSY86tEFw
+The code is very messy... I'm going to clean it soon.
 
+
+####Requisite
+You need SFML2 in order to run the simulation.
 
 ####Usage
 
