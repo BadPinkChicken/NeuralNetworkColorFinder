@@ -47,6 +47,7 @@ sf::Color	add_Tricolor(sf::Color a, sf::Color b, sf::Color c, sf::Color d, float
 int main(int ac, char **av)
 {
   sf::RenderWindow	window(sf::VideoMode(800, 600), "Neuronal Network !");
+  int	ch = 0;
   int	tab2[20] =
 {3, 4, 5, 6, 3, 4, 5, 6, 3, 4, 5, 6, 7, 7, 7, 7, 8, 8, 8, 8};
   int	tab1[20] =
@@ -57,8 +58,8 @@ int main(int ac, char **av)
   goals.push_back(sf::CircleShape(60));
   goals[0].setPosition(800-120, 600 /3 - 40);
   goals[1].setPosition(800-120, 600 /3 * 2 - 40);
-  goals[0].setFillColor(sf::Color(200, 67, 123));
-  goals[1].setFillColor(sf::Color(123, 200, 94));
+  goals[0].setFillColor(sf::Color(99, 233, 23));
+  goals[1].setFillColor(sf::Color(198, 20, 194));
 
   sf::Font	font;
   sf::Text	text;
@@ -68,7 +69,7 @@ int main(int ac, char **av)
 
   text.setFont(font);
   text.setCharacterSize(20);
-  text.setStyle(sf::Text::Bold);
+  //  text.setStyle(sf::Text::Bold);
   text.setColor(sf::Color::White);
 
 
@@ -100,10 +101,15 @@ int main(int ac, char **av)
 	Layers[i+7].setFillColor(add_Tricolor(Layers[3].getFillColor(), Layers[4].getFillColor(), Layers[5].getFillColor(), Layers[6].getFillColor(), node.weights[i+12], node.weights[i+14], node.weights[i+16], node.weights[i+18]));
       for (std::vector<sf::CircleShape>::iterator it = Layers.begin(); it != Layers.end(); it++)
 	window.draw(*it);
-      sprintf(buff, "Generation : %d Average fitness : %0.f", pop.current_gen, pop.average_fit);
+      sprintf(buff, "Generation : %d Average fitness : %0.f\nPopulation size :%d Childs : %d", pop.current_gen, pop.average_fit, atoi(av[1]), ++ch + atoi(av[1]));
       text.setString(buff);
       window.draw(text);
       window.display();
+/*      if (pop.average_fit == 1 || ch >= 1000000)
+	{
+	  std::cout << buff << std::endl;
+	  return 0;
+  }*/
     }
   return (0);
 }

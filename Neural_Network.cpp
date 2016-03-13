@@ -29,8 +29,8 @@ t_color c2 = {tmp.r, tmp.g, tmp.b};
   this->o1 = c1;
   this->o2 = c2;
 
-t_color	goal1 = {200, 67, 123};
-t_color	goal2 = {123, 200, 94};
+t_color	goal1 = {99, 233, 23};
+t_color	goal2 = {198, 20, 194};
   this->FindFitness(goal1, goal2);
 }
 
